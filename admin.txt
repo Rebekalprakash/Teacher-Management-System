@@ -1,0 +1,52 @@
+<?php $links= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
+    <?php include "header.php"; ?>
+<!--<div class="container">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+</div>-->
+
+<!-- blog section start -->
+      <div class="blog_section layout_padding">
+         <div class="container">
+            <div class="blog_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h4 class="classes_text">Admin Login</h4>
+					 <form action='' method='post'>
+<input type="text" class="email_text1" placeholder="Username" name="uname">
+<input type="password" class="email_text1" placeholder="Password" name="upass">
+<input type="submit" class="quote_bt1" value="Login" name="submit">
+</form>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- blog section end -->
+	  
+	  <?php
+if(isset($_POST['submit']))
+{
+$uname=$_POST['uname'];
+$upass=$_POST['upass'];
+$q=mysql_query("select * from admin where aname='$uname' and apass='$upass'")or die(mysql_error());
+$n=mysql_num_rows($q);
+if($n>0)
+{
+$r=mysql_fetch_array($q);
+$_SESSION['aid']=$aid=$r['aid'];
+$_SESSION['aname']=$aname=$r['aname'];
+echo "<script type='text/javascript'>alert('Admin Login Successfull');</script>";
+echo '<meta http-equiv="refresh" content="0;url=add_teachers.php">';
+}
+else
+{
+echo "<script type='text/javascript'>alert('You are not authorised user');</script>";
+}}
+?>
+
+
+
+	  
+<?php include "footer.php"; ?>

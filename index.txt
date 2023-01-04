@@ -1,0 +1,23 @@
+<?php $links= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
+    <?php include "header.php"; ?>
+<!--<div class="container">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+</div>-->
+
+<!-- blog section start -->
+      <div class="blog_section layout_padding">
+         <div class="container">
+            <div class="blog_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h4 class="classes_text">Teacher Management System</h4>
+                     <p class="ipsum_text">Every year through the government exams plenty of teachers are hired and posted in various government schools. The tracking of teachers from recruitment to their entire service duration is done manually which makes it difficult to manage and keep track. Addressing this problem will give government the ease of managing teachers through one single portal which will help in maintaining clear stats of the teachers currently posted.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- blog section end -->
+	  
+<?php include "footer.php"; ?>

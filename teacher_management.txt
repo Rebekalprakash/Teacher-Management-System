@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 28, 2022 at 08:01 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `teacher-mgmt`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `aid` int(5) NOT NULL AUTO_INCREMENT,
+  `aname` varchar(30) NOT NULL,
+  `apass` varchar(30) NOT NULL,
+  PRIMARY KEY (`aid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`aid`, `aname`, `apass`) VALUES
+(2, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE IF NOT EXISTS `teacher` (
+  `tid` int(5) NOT NULL AUTO_INCREMENT,
+  `tname` text NOT NULL,
+  `district` text NOT NULL,
+  `sname` text NOT NULL,
+  `saddr` text NOT NULL,
+  `age` int(5) NOT NULL,
+  `dob` date NOT NULL,
+  `qualif` text NOT NULL,
+  `phone` int(10) NOT NULL,
+  `salary` int(10) NOT NULL,
+  `exper` int(10) NOT NULL,
+  `ttime` text NOT NULL,
+  `design` text NOT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`tid`, `tname`, `district`, `sname`, `saddr`, `age`, `dob`, `qualif`, `phone`, `salary`, `exper`, `ttime`, `design`) VALUES
+(1, 'Shakira Parveen.K', 'Namakkal', 'Government High School', 'Public service & government agency', 35, '2022-11-26', 'M.Sc.B.Ed.', 2147483647, 19000, 2, '2025', 'Principal- TGT');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

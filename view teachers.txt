@@ -1,0 +1,55 @@
+<?php $links= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>
+    <?php include "header.php"; ?>
+<!--<div class="container">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+<input type="text" class="email_text1" placeholder="Enter Your Email" name="Enter Your Email">
+</div>-->
+
+<!-- blog section start -->
+      <div class="blog_section layout_padding">
+         <div class="container">
+            <div class="blog_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <h4 class="classes_text">View Teachers</h4>
+
+            <table align="center" cellpadding="5" cellspacing="0" border="0" width="100%">
+		<tr><td>Teacher name</td><td>District</td><td>School name</td><td>School Address</td><td>AGE</td><td>DOB</td><td>Qualification</td><td>Phone</td><td>Salary</td><td>Experience</td><td>Time Period For Transfer</td><td>Designation</td></tr>
+		<?php
+		$f=mysql_query("select * from  teacher")or die(mysql_error());
+		while($n=mysql_fetch_array($f))
+			 {
+$tname=$n['tname'];
+$district=$n['district'];
+$sname=$n['sname'];
+$saddr=$n['saddr'];
+$age=$n['age'];
+$dob=$n['dob'];
+$qualif=$n['qualif'];
+$phone=$n['phone'];
+$salary=$n['salary'];
+$exper=$n['exper'];
+$ttime=$n['ttime'];
+$design=$n['design'];
+echo "<tr><td>$tname</td><td>$district</td><td>$sname</td><td>$saddr</td><td>$age</td>
+<td>$dob</td><td>$qualif</td><td>$phone</td><td>$salary</td><td>$exper</td><td>$ttime</td><td>$design</td></tr>";
+
+}
+		?>
+		</table>
+    
+
+					 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- blog section end -->
+	  
+	  
+
+
+
+	  
+<?php include "footer.php"; ?>
